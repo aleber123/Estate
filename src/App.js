@@ -1,21 +1,22 @@
 import React from 'react';
-import Header from './Components/Header';
-import HeroSection from './Components/HeroSection';
-import SocialLinks from './Components/SocialLinks';
-import MainContent from './Components/MainContent';
+import { BrowserRouter as Router } from 'react-router-dom';
+import InstagramFeed from './Components/InstagramFeed';
+import Navbar from './Components/Navbar';
+import Slideshow from './Components/ImageSlider';
+import NewArrivals from './Components/NewArrivals';
 import Footer from './Components/Footer';
-// import other components
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <HeroSection />
-      <SocialLinks />
-      <MainContent />
-      <Footer />
-      {/* other components */}
-    </div>
+    <Router>
+      <div>
+        <Navbar />
+        <Slideshow />
+        <NewArrivals />
+        <InstagramFeed />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
