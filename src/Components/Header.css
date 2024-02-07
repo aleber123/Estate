@@ -126,12 +126,19 @@ span {
   left: 0; /* Ensures it starts from the very left */
   right: 0; /* Ensures it extends to the very right */
   bottom: 0; /* Aligns to the bottom */
-  font-size: 48px; /* Adjust icon size as needed, 48px might be too large */
+  font-size: 42px; /* Adjust icon size as needed, 48px might be too large */
 }
 
 .social-icons-bottom a, .social-icons-bottom a svg {
   color: #ffffff; /* Sets icon color to white */
-  margin: 0 2px; /* Spacing between icons */
+  margin: 0 3px; /* Spacing between icons */
+  border-radius: 4px;
+  padding: 4px 2px 0px 2px; /* Adds padding */
+}
+
+.social-icons-bottom a:hover {
+  background-color: rgba(70, 70, 70, 0.55); /* Adjusted for a gray tone with transparency */
+
 }
 
 
