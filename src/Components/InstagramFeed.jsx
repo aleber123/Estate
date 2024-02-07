@@ -13,7 +13,7 @@ const InstagramFeed = () => {
     const fetchPosts = async () => {
       try {
         const url="https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,permalink,children{media_type,media_url}&access_token="
-        const token=process.env.REACT_APP_INSTAGRAM_AUTH_TOKEN;
+        const token=process.env.NEXT_PUBLIC_INSTAGRAM_AUTH_TOKEN;
        const fullurl=url.concat(token);
         const response = await fetch(fullurl);
         const data = await response.json();
