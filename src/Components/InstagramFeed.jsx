@@ -16,12 +16,14 @@ const InstagramFeed = () => {
         // Use the provided Cloud Run function URL
         const functionUrl = 'https://fetchinstagramdata-dwj345qyfq-uc.a.run.app';
         const response = await fetch(functionUrl);
-        const data = await response.json();
-        if (response.ok) {
-          setPosts(data.data); // Ensure this matches the structure of your data
-        } else {
-          throw new Error(data.message || 'Failed to fetch posts');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
         }
+        const responseBody = await response.text(); // Get the response as text
+        console.log(responseBody); // Log raw response body for debugging
+        const data = JSON.parse(responseBody); // Parse the text as JSON
+
+        setPosts(data.data); // Ensure this matches the structure of your data
       } catch (error) {
         console.error('Error fetching Instagram posts:', error);
         setError(error.toString());

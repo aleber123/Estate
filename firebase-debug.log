@@ -1,0 +1,258 @@
+[debug] [2024-02-07T08:25:14.986Z] ----------------------------------------------------------------------
+[debug] [2024-02-07T08:25:14.988Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions:fetchInstagramData --debug
+[debug] [2024-02-07T08:25:14.988Z] CLI Version:   13.2.0
+[debug] [2024-02-07T08:25:14.988Z] Platform:      darwin
+[debug] [2024-02-07T08:25:14.989Z] Node Version:  v18.18.0
+[debug] [2024-02-07T08:25:14.990Z] Time:          Wed Feb 07 2024 09:25:14 GMT+0100 (Central European Standard Time)
+[debug] [2024-02-07T08:25:14.990Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-07T08:25:15.039Z] Object ".functions" in "firebase.json" has unknown property: {"additionalProperty":"platform"}
+[debug] [2024-02-07T08:25:15.040Z] Field ".functions" in "firebase.json" is possibly invalid: should be array
+[debug] [2024-02-07T08:25:15.040Z] Field ".functions" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2024-02-07T08:25:15.045Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-07T08:25:15.046Z] > authorizing via signed-in user (alexander.bergqvist@gmail.com)
+[debug] [2024-02-07T08:25:15.046Z] [iam] checking project danielrealestate-cd099 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-02-07T08:25:15.048Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/danielrealestate-cd099:testIamPermissions [none]
+[debug] [2024-02-07T08:25:15.048Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/danielrealestate-cd099:testIamPermissions x-goog-quota-user=projects/danielrealestate-cd099
+[debug] [2024-02-07T08:25:15.048Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/danielrealestate-cd099:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-02-07T08:25:15.912Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/danielrealestate-cd099:testIamPermissions 200
+[debug] [2024-02-07T08:25:15.913Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/danielrealestate-cd099:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-02-07T08:25:15.913Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/danielrealestate-cd099/serviceAccounts/danielrealestate-cd099@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-02-07T08:25:15.914Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/danielrealestate-cd099/serviceAccounts/danielrealestate-cd099@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-02-07T08:25:16.642Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/danielrealestate-cd099/serviceAccounts/danielrealestate-cd099@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-02-07T08:25:16.643Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/danielrealestate-cd099/serviceAccounts/danielrealestate-cd099@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'danielrealestate-cd099'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2024-02-07T08:25:19.431Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099 [none]
+[debug] [2024-02-07T08:25:19.704Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099 200
+[debug] [2024-02-07T08:25:19.705Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099 {"projectId":"danielrealestate-cd099","projectNumber":"910316249199","displayName":"DanielRealestate","name":"projects/danielrealestate-cd099","resources":{"hostingSite":"danielrealestate-cd099"},"state":"ACTIVE","etag":"1_93e9400b-f7f2-49a7-af34-27dfe002b40b"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-02-07T08:25:19.708Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-02-07T08:25:19.708Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/danielrealestate-cd099
+[debug] [2024-02-07T08:25:19.710Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-02-07T08:25:19.710Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/danielrealestate-cd099
+[debug] [2024-02-07T08:25:19.711Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudbuild.googleapis.com [none]
+[debug] [2024-02-07T08:25:19.712Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudbuild.googleapis.com x-goog-quota-user=projects/danielrealestate-cd099
+[debug] [2024-02-07T08:25:19.713Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/artifactregistry.googleapis.com [none]
+[debug] [2024-02-07T08:25:19.713Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/artifactregistry.googleapis.com x-goog-quota-user=projects/danielrealestate-cd099
+[debug] [2024-02-07T08:25:20.643Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/runtimeconfig.googleapis.com 200
+[debug] [2024-02-07T08:25:20.644Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-02-07T08:25:20.645Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudbuild.googleapis.com 200
+[debug] [2024-02-07T08:25:20.645Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-02-07T08:25:20.667Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/artifactregistry.googleapis.com 200
+[debug] [2024-02-07T08:25:20.668Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-02-07T08:25:20.707Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudfunctions.googleapis.com 200
+[debug] [2024-02-07T08:25:20.707Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-02-07T08:25:20.708Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099/adminSdkConfig [none]
+[debug] [2024-02-07T08:25:20.982Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099/adminSdkConfig 200
+[debug] [2024-02-07T08:25:20.982Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099/adminSdkConfig {"projectId":"danielrealestate-cd099","storageBucket":"danielrealestate-cd099.appspot.com"}
+[debug] [2024-02-07T08:25:20.983Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs [none]
+[debug] [2024-02-07T08:25:21.921Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs 200
+[debug] [2024-02-07T08:25:21.922Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs {"configs":[{"name":"projects/danielrealestate-cd099/configs/instagram"}]}
+[debug] [2024-02-07T08:25:21.923Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs/instagram/variables [none]
+[debug] [2024-02-07T08:25:22.914Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs/instagram/variables 200
+[debug] [2024-02-07T08:25:22.914Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs/instagram/variables {"variables":[{"name":"projects/danielrealestate-cd099/configs/instagram/variables/access_token","updateTime":"2024-02-06T23:36:32.463203685Z"}]}
+[debug] [2024-02-07T08:25:22.914Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs/instagram/variables/access_token [none]
+[debug] [2024-02-07T08:25:24.154Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs/instagram/variables/access_token 200
+[debug] [2024-02-07T08:25:24.154Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs/instagram/variables/access_token {"name":"projects/danielrealestate-cd099/configs/instagram/variables/access_token","updateTime":"2024-02-06T23:36:32.463203685Z","text":"IGQWRNeEkwY2Y2LXV5QnpCa0ZAEU0tDd0xNRWx2d3NlRW53c0FUQVlnejVsdEZAPZAzI4TGtlTjNsY1l3V2dFRk5xeFBSMjdCQ01lbUZA4ZAVVHejhfT3BOeEU4Vjd3d2VNV3pDMUliTkNXbXlFQ3lYYzVfSG5YVDlCdzgZD"}
+[debug] [2024-02-07T08:25:24.156Z] Validating nodejs source
+[debug] [2024-02-07T08:25:24.787Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-02-07T08:25:24.788Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-02-07T08:25:24.789Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-02-07T08:25:24.796Z] Found firebase-functions binary at '/Users/alexanderbergqvist/Desktop/danielweb/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8552
+
+[debug] [2024-02-07T08:25:25.209Z] Got response from /__/functions.yaml {"endpoints":{"fetchInstagramData":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"fetchInstagramData"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/alexanderbergqvist/Desktop/danielweb/functions (74.92 KB) for uploading 
+[debug] [2024-02-07T08:25:25.260Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/-/functions [none]
+[debug] [2024-02-07T08:25:25.979Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/-/functions 200
+[debug] [2024-02-07T08:25:25.980Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/-/functions {}
+[debug] [2024-02-07T08:25:25.981Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/danielrealestate-cd099/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-02-07T08:25:27.146Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/danielrealestate-cd099/locations/-/functions 200
+[debug] [2024-02-07T08:25:27.147Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/danielrealestate-cd099/locations/-/functions {"functions":[{"name":"projects/danielrealestate-cd099/locations/us-central1/functions/fetchInstagramData","buildConfig":{"build":"projects/910316249199/locations/us-central1/builds/3e40fd28-d99b-453e-bc10-85e9ccad427e","runtime":"nodejs18","entryPoint":"fetchInstagramData","source":{"storageSource":{"bucket":"gcf-v2-sources-910316249199-us-central1","object":"fetchInstagramData/function-source.zip","generation":"1707258582996789"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/danielrealestate-cd099/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-910316249199-us-central1","object":"fetchInstagramData/function-source.zip","generation":"1707258582996789"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/danielrealestate-cd099/locations/us-central1/services/fetchinstagramdata","timeoutSeconds":60,"environmentVariables":{"INSTAGRAM_ACCESS_TOKEN":"IGQWRNeEkwY2Y2LXV5QnpCa0ZAEU0tDd0xNRWx2d3NlRW53c0FUQVlnejVsdEZAPZAzI4TGtlTjNsY1l3V2dFRk5xeFBSMjdCQ01lbUZA4ZAVVHejhfT3BOeEU4Vjd3d2VNV3pDMUliTkNXbXlFQ3lYYzVfSG5YVDlCdzgZD"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","uri":"https://fetchinstagramdata-dwj345qyfq-uc.a.run.app","serviceAccountEmail":"910316249199-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"maxInstanceRequestConcurrency":80,"availableCpu":"1000m"},"state":"ACTIVE","updateTime":"2024-02-06T22:30:32.526703509Z","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"93b81dd410deac60130c4ae459f277ec3ada3b38"},"environment":"GEN_2","url":"https://us-central1-danielrealestate-cd099.cloudfunctions.net/fetchInstagramData"}]}
+[debug] [2024-02-07T08:25:27.156Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099 [none]
+[debug] [2024-02-07T08:25:27.489Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099 200
+[debug] [2024-02-07T08:25:27.489Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099 {"projectId":"danielrealestate-cd099","projectNumber":"910316249199","displayName":"DanielRealestate","name":"projects/danielrealestate-cd099","resources":{"hostingSite":"danielrealestate-cd099"},"state":"ACTIVE","etag":"1_93e9400b-f7f2-49a7-af34-27dfe002b40b"}
+[debug] [2024-02-07T08:25:27.492Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2024-02-07T08:25:27.492Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2024-02-07T08:25:28.328Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2024-02-07T08:25:28.329Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-1063357957292.us-central1.cloudfunctions.appspot.com/c1ab1bd5-384b-4bb8-ae79-60341b927d74.zip?GoogleAccessId=service-910316249199@gcf-admin-robot.iam.gserviceaccount.com&Expires=1707296128&Signature=Uui61Fn7jwi3OgzJoLdirl0hBF4Xv6gpH4YLjdVIidX9T%2BWU0EyE0VHlwgqVIAtkmswP%2Bt81nyrGs3%2FE0VpiviHMdsJxN8L6Stpqi0f3%2BdPK6kF9g%2Bn5r9ZBKkOQ7yozdI2k5eAJ6g3xc275ztyy0sxHCGyr3AiZBAy7k%2Bf0%2FLv3WgYUyTfemiK5Kg%2F3ZAHU68gVbdG2c0Ak7P3rmXlWrArgOU5%2F546oPL%2FPFq7ZR3jckYKSTCDgMstWWGv0Y6WPRASViBNYVDBgdDxlY7L3BSlO%2FL6s48FA4vZ8n3%2FuDPDQSUMHQxDiK1aR4EqLdGYmPBZ5x9Cdm68W5mg6QaY%2B8Q%3D%3D"}
+[debug] [2024-02-07T08:25:28.331Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-1063357957292.us-central1.cloudfunctions.appspot.com/c1ab1bd5-384b-4bb8-ae79-60341b927d74.zip GoogleAccessId=service-910316249199%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1707296128&Signature=Uui61Fn7jwi3OgzJoLdirl0hBF4Xv6gpH4YLjdVIidX9T%2BWU0EyE0VHlwgqVIAtkmswP%2Bt81nyrGs3%2FE0VpiviHMdsJxN8L6Stpqi0f3%2BdPK6kF9g%2Bn5r9ZBKkOQ7yozdI2k5eAJ6g3xc275ztyy0sxHCGyr3AiZBAy7k%2Bf0%2FLv3WgYUyTfemiK5Kg%2F3ZAHU68gVbdG2c0Ak7P3rmXlWrArgOU5%2F546oPL%2FPFq7ZR3jckYKSTCDgMstWWGv0Y6WPRASViBNYVDBgdDxlY7L3BSlO%2FL6s48FA4vZ8n3%2FuDPDQSUMHQxDiK1aR4EqLdGYmPBZ5x9Cdm68W5mg6QaY%2B8Q%3D%3D
+[debug] [2024-02-07T08:25:28.331Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-1063357957292.us-central1.cloudfunctions.appspot.com/c1ab1bd5-384b-4bb8-ae79-60341b927d74.zip [stream]
+[debug] [2024-02-07T08:25:28.894Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-1063357957292.us-central1.cloudfunctions.appspot.com/c1ab1bd5-384b-4bb8-ae79-60341b927d74.zip 200
+[debug] [2024-02-07T08:25:28.895Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-1063357957292.us-central1.cloudfunctions.appspot.com/c1ab1bd5-384b-4bb8-ae79-60341b927d74.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[error] 
+[error] Error: [fetchInstagramData(us-central1)] Functions cannot be downgraded from GCFv2 to GCFv1
+[debug] [2024-02-07T13:11:19.051Z] ----------------------------------------------------------------------
+[debug] [2024-02-07T13:11:19.053Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions:fetchInstagramData --debug
+[debug] [2024-02-07T13:11:19.053Z] CLI Version:   13.2.0
+[debug] [2024-02-07T13:11:19.053Z] Platform:      darwin
+[debug] [2024-02-07T13:11:19.054Z] Node Version:  v18.18.0
+[debug] [2024-02-07T13:11:19.059Z] Time:          Wed Feb 07 2024 14:11:19 GMT+0100 (Central European Standard Time)
+[debug] [2024-02-07T13:11:19.060Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-07T13:11:19.062Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-02-07T13:11:19.145Z] Object ".functions" in "firebase.json" has unknown property: {"additionalProperty":"platform"}
+[debug] [2024-02-07T13:11:19.145Z] Field ".functions" in "firebase.json" is possibly invalid: should be array
+[debug] [2024-02-07T13:11:19.146Z] Field ".functions" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2024-02-07T13:11:19.150Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-07T13:11:19.151Z] > authorizing via signed-in user (alexander.bergqvist@gmail.com)
+[debug] [2024-02-07T13:11:19.151Z] [iam] checking project danielrealestate-cd099 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-02-07T13:11:19.152Z] > refreshing access token with scopes: []
+[debug] [2024-02-07T13:11:19.153Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-02-07T13:11:19.153Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-02-07T13:11:19.418Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-02-07T13:11:19.419Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-02-07T13:11:19.434Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/danielrealestate-cd099:testIamPermissions [none]
+[debug] [2024-02-07T13:11:19.435Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/danielrealestate-cd099:testIamPermissions x-goog-quota-user=projects/danielrealestate-cd099
+[debug] [2024-02-07T13:11:19.435Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/danielrealestate-cd099:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-02-07T13:11:19.570Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-02-07T13:11:19.570Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2024-02-07T13:11:19.695Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/danielrealestate-cd099:testIamPermissions 200
+[debug] [2024-02-07T13:11:19.695Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/danielrealestate-cd099:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-02-07T13:11:19.696Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/danielrealestate-cd099/serviceAccounts/danielrealestate-cd099@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-02-07T13:11:19.696Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/danielrealestate-cd099/serviceAccounts/danielrealestate-cd099@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-02-07T13:11:20.418Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/danielrealestate-cd099/serviceAccounts/danielrealestate-cd099@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-02-07T13:11:20.418Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/danielrealestate-cd099/serviceAccounts/danielrealestate-cd099@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'danielrealestate-cd099'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2024-02-07T13:11:23.709Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099 [none]
+[debug] [2024-02-07T13:11:23.993Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099 200
+[debug] [2024-02-07T13:11:23.993Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099 {"projectId":"danielrealestate-cd099","projectNumber":"910316249199","displayName":"DanielRealestate","name":"projects/danielrealestate-cd099","resources":{"hostingSite":"danielrealestate-cd099"},"state":"ACTIVE","etag":"1_93e9400b-f7f2-49a7-af34-27dfe002b40b"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-02-07T13:11:23.997Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-02-07T13:11:23.997Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/danielrealestate-cd099
+[debug] [2024-02-07T13:11:23.998Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-02-07T13:11:23.998Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/danielrealestate-cd099
+[debug] [2024-02-07T13:11:23.999Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudbuild.googleapis.com [none]
+[debug] [2024-02-07T13:11:23.999Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudbuild.googleapis.com x-goog-quota-user=projects/danielrealestate-cd099
+[debug] [2024-02-07T13:11:24.000Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/artifactregistry.googleapis.com [none]
+[debug] [2024-02-07T13:11:24.000Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/artifactregistry.googleapis.com x-goog-quota-user=projects/danielrealestate-cd099
+[debug] [2024-02-07T13:11:24.946Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudbuild.googleapis.com 200
+[debug] [2024-02-07T13:11:24.947Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-02-07T13:11:24.948Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/runtimeconfig.googleapis.com 200
+[debug] [2024-02-07T13:11:24.948Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-02-07T13:11:24.948Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/artifactregistry.googleapis.com 200
+[debug] [2024-02-07T13:11:24.948Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-02-07T13:11:24.966Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudfunctions.googleapis.com 200
+[debug] [2024-02-07T13:11:24.966Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/danielrealestate-cd099/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-02-07T13:11:24.967Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099/adminSdkConfig [none]
+[debug] [2024-02-07T13:11:25.200Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099/adminSdkConfig 200
+[debug] [2024-02-07T13:11:25.201Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099/adminSdkConfig {"projectId":"danielrealestate-cd099","storageBucket":"danielrealestate-cd099.appspot.com"}
+[debug] [2024-02-07T13:11:25.201Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs [none]
+[debug] [2024-02-07T13:11:26.317Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs 200
+[debug] [2024-02-07T13:11:26.317Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs {"configs":[{"name":"projects/danielrealestate-cd099/configs/instagram"}]}
+[debug] [2024-02-07T13:11:26.318Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs/instagram/variables [none]
+[debug] [2024-02-07T13:11:27.113Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs/instagram/variables 200
+[debug] [2024-02-07T13:11:27.113Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs/instagram/variables {"variables":[{"name":"projects/danielrealestate-cd099/configs/instagram/variables/access_token","updateTime":"2024-02-06T23:36:32.463203685Z"}]}
+[debug] [2024-02-07T13:11:27.114Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs/instagram/variables/access_token [none]
+[debug] [2024-02-07T13:11:28.196Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs/instagram/variables/access_token 200
+[debug] [2024-02-07T13:11:28.197Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/danielrealestate-cd099/configs/instagram/variables/access_token {"name":"projects/danielrealestate-cd099/configs/instagram/variables/access_token","updateTime":"2024-02-06T23:36:32.463203685Z","text":"IGQWRNeEkwY2Y2LXV5QnpCa0ZAEU0tDd0xNRWx2d3NlRW53c0FUQVlnejVsdEZAPZAzI4TGtlTjNsY1l3V2dFRk5xeFBSMjdCQ01lbUZA4ZAVVHejhfT3BOeEU4Vjd3d2VNV3pDMUliTkNXbXlFQ3lYYzVfSG5YVDlCdzgZD"}
+[debug] [2024-02-07T13:11:28.200Z] Validating nodejs source
+[debug] [2024-02-07T13:11:28.873Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-02-07T13:11:28.874Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-02-07T13:11:28.875Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-02-07T13:11:28.882Z] Found firebase-functions binary at '/Users/alexanderbergqvist/Desktop/danielweb/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8015
+
+[debug] [2024-02-07T13:11:29.368Z] Got response from /__/functions.yaml {"endpoints":{"fetchInstagramData":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"fetchInstagramData"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/alexanderbergqvist/Desktop/danielweb/functions (74.92 KB) for uploading 
+[debug] [2024-02-07T13:11:29.414Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/-/functions [none]
+[debug] [2024-02-07T13:11:29.949Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/-/functions 200
+[debug] [2024-02-07T13:11:29.949Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/-/functions {}
+[debug] [2024-02-07T13:11:29.951Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/danielrealestate-cd099/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-02-07T13:11:31.047Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/danielrealestate-cd099/locations/-/functions 200
+[debug] [2024-02-07T13:11:31.047Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/danielrealestate-cd099/locations/-/functions {"functions":[{"name":"projects/danielrealestate-cd099/locations/us-central1/functions/fetchInstagramData","buildConfig":{"build":"projects/910316249199/locations/us-central1/builds/3e40fd28-d99b-453e-bc10-85e9ccad427e","runtime":"nodejs18","entryPoint":"fetchInstagramData","source":{"storageSource":{"bucket":"gcf-v2-sources-910316249199-us-central1","object":"fetchInstagramData/function-source.zip","generation":"1707258582996789"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/danielrealestate-cd099/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-910316249199-us-central1","object":"fetchInstagramData/function-source.zip","generation":"1707258582996789"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/danielrealestate-cd099/locations/us-central1/services/fetchinstagramdata","timeoutSeconds":60,"environmentVariables":{"INSTAGRAM_ACCESS_TOKEN":"IGQWRNeEkwY2Y2LXV5QnpCa0ZAEU0tDd0xNRWx2d3NlRW53c0FUQVlnejVsdEZAPZAzI4TGtlTjNsY1l3V2dFRk5xeFBSMjdCQ01lbUZA4ZAVVHejhfT3BOeEU4Vjd3d2VNV3pDMUliTkNXbXlFQ3lYYzVfSG5YVDlCdzgZD"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","uri":"https://fetchinstagramdata-dwj345qyfq-uc.a.run.app","serviceAccountEmail":"910316249199-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"maxInstanceRequestConcurrency":80,"availableCpu":"1000m"},"state":"ACTIVE","updateTime":"2024-02-06T22:30:32.526703509Z","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"93b81dd410deac60130c4ae459f277ec3ada3b38"},"environment":"GEN_2","url":"https://us-central1-danielrealestate-cd099.cloudfunctions.net/fetchInstagramData"}]}
+[debug] [2024-02-07T13:11:31.052Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099 [none]
+[debug] [2024-02-07T13:11:31.292Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099 200
+[debug] [2024-02-07T13:11:31.293Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/danielrealestate-cd099 {"projectId":"danielrealestate-cd099","projectNumber":"910316249199","displayName":"DanielRealestate","name":"projects/danielrealestate-cd099","resources":{"hostingSite":"danielrealestate-cd099"},"state":"ACTIVE","etag":"1_93e9400b-f7f2-49a7-af34-27dfe002b40b"}
+[debug] [2024-02-07T13:11:31.295Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2024-02-07T13:11:31.295Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2024-02-07T13:11:32.095Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2024-02-07T13:11:32.096Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/danielrealestate-cd099/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-1063357957292.us-central1.cloudfunctions.appspot.com/0119e69a-8b06-447a-b1d6-3cd5e487aa25.zip?GoogleAccessId=service-910316249199@gcf-admin-robot.iam.gserviceaccount.com&Expires=1707313291&Signature=kS3klMc7CHOK1LpIuzsVA7JuLHMdbWpEoedA0pC2DoQK3URAhAJKou21TrDcCk5kLYqHZx70Uh04%2Bq2%2F8r7oMeuXbhVJp1%2FktaySS%2F5ZnyE81YW216OPr8AQ9hKY16el%2F9iZGSc%2Bx140WTqen5ScOrYSF1PWpciCteeaSQYp2aYp7%2BQ2SK1kz5yyebznFpk2tZGMzKMehfSeq9f7D37lJCIDP7rT6%2FdY56ETzELOyd3qIMotx6Q4pRDnSSxobM3IVWmIZWRVEKLyNikZoTeSqHLQ4wiMhU9ePyF4m8U%2Fgpigj0521oBqdvFZ2KQyxMVrfiJM%2BTG1tltFo613F57Lfw%3D%3D"}
+[debug] [2024-02-07T13:11:32.097Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-1063357957292.us-central1.cloudfunctions.appspot.com/0119e69a-8b06-447a-b1d6-3cd5e487aa25.zip GoogleAccessId=service-910316249199%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1707313291&Signature=kS3klMc7CHOK1LpIuzsVA7JuLHMdbWpEoedA0pC2DoQK3URAhAJKou21TrDcCk5kLYqHZx70Uh04%2Bq2%2F8r7oMeuXbhVJp1%2FktaySS%2F5ZnyE81YW216OPr8AQ9hKY16el%2F9iZGSc%2Bx140WTqen5ScOrYSF1PWpciCteeaSQYp2aYp7%2BQ2SK1kz5yyebznFpk2tZGMzKMehfSeq9f7D37lJCIDP7rT6%2FdY56ETzELOyd3qIMotx6Q4pRDnSSxobM3IVWmIZWRVEKLyNikZoTeSqHLQ4wiMhU9ePyF4m8U%2Fgpigj0521oBqdvFZ2KQyxMVrfiJM%2BTG1tltFo613F57Lfw%3D%3D
+[debug] [2024-02-07T13:11:32.098Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-1063357957292.us-central1.cloudfunctions.appspot.com/0119e69a-8b06-447a-b1d6-3cd5e487aa25.zip [stream]
+[debug] [2024-02-07T13:11:33.324Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-1063357957292.us-central1.cloudfunctions.appspot.com/0119e69a-8b06-447a-b1d6-3cd5e487aa25.zip 200
+[debug] [2024-02-07T13:11:33.325Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-1063357957292.us-central1.cloudfunctions.appspot.com/0119e69a-8b06-447a-b1d6-3cd5e487aa25.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[error] 
+[error] Error: [fetchInstagramData(us-central1)] Functions cannot be downgraded from GCFv2 to GCFv1
