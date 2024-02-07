@@ -8,6 +8,7 @@
   width: 100%;
   top: 0;
   z-index: 1000;
+
 }
 
 .menu-bars {
@@ -57,8 +58,17 @@
   border-radius: 4px;
 }
 
+.nav-menu, .menu-scroll {
+  overflow-x: hidden; /* This prevents horizontal scrolling */
+}
+
+
 .nav-text a:hover {
   background-color: rgba(70, 70, 70, 0.55); /* Adjusted for a gray tone with transparency */
+}
+
+.nav-text a svg {
+  margin-right: 15px; /* Adjust the spacing between the icon and the text */
 }
 
 .nav-menu-items {
@@ -80,6 +90,9 @@ span {
 .menu-scroll {
   max-height: calc(100vh - 80px); /* Adjust the maximum height as needed */
   overflow-y: auto;
+}
+.menu-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Webkit browsers */
 }
 
 .menu-content {
