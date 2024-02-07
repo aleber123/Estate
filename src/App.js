@@ -6,6 +6,7 @@ import Slideshow from './Components/ImageSlider';
 import NewArrivals from './Components/NewArrivals';
 import Footer from './Components/Footer';
 
+
 function App() {
   return (
     <Router>
