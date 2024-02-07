@@ -4,11 +4,14 @@ import logo1 from './img/bild2.jpg';
 import logo2 from './img/bild3.jpg';
 import './Slideshow.css';
 import fontStyles from '../Fonts.module.css';
+// Importing arrow icons
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Slideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const images = [logo, logo1, logo2];
   const texts = ['SELL WITH US', 'BUY WITH US', 'YOUR TRUSTED PARTNER'];
+
   let touchStartX = 0;
   let touchEndX = 0;
 
@@ -48,6 +51,7 @@ const Slideshow = () => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
+      <IoIosArrowBack className="slide-arrow left-arrow" onClick={prevSlide} />
       {images.map((img, index) => (
         <img
           key={index}
@@ -56,6 +60,7 @@ const Slideshow = () => {
           className={`slide ${index === currentSlide ? 'active' : ''}`}
         />
       ))}
+      <IoIosArrowForward className="slide-arrow right-arrow" onClick={nextSlide} />
       <div className="slide-indicators">
         {images.map((_, index) => (
           <span

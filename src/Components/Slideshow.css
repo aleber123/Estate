@@ -4,11 +4,20 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 100%;
-  max-width: 100%; /* Adjust as needed */
-  height: calc(100vh - 60px); /* Adjust the height as needed, subtracting the navbar height */
-  margin: auto; /* Center the slideshow */
-  overflow: hidden; /* Hide overflow to manage absolute positioned images */
+  width: 100%; /* Keep it 100% for mobile and tablet */
+  max-width: 100%;
+  height: calc(100vh - 60px);
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Apply margins only for desktop */
+@media (min-width: 1024px) {
+  .container {
+    width: calc(100% - 200px); /* Adjusted for larger total margin */
+    margin-left: 100px; /* Larger left margin */
+    margin-right: 100px; /* Larger right margin */
+  }
 }
 
 /* Setup for slideshow images */
@@ -69,3 +78,32 @@
   justify-content: center;
   z-index: 3; /* Ensure indicators are above the images */
 }
+
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 5px; /* Adjust the size as needed */
+  color: #fff; /* Adjust arrow color as needed */
+  cursor: pointer;
+  z-index: 4; /* Ensure arrows are above the slideshow images */
+  width: 55px; /* Diameter of the circle */
+  height: 55px; /* Diameter of the circle */
+  border-radius: 50%; /* Creates a circle */
+  background-color: rgba(20, 20, 20, 0.25); /* White background with opacity for visibility */
+  backdrop-filter: blur(10px); /* Increase blur effect */
+}
+
+.left-arrow {
+  left: 20px; /* Adjust distance from the left edge */
+}
+
+.right-arrow {
+  right: 20px; /* Adjust distance from the right edge */
+}
+
+/* Consider adding hover effects for better user interaction */
+.slide-arrow:hover {
+  color: #ccc; /* Example hover color */
+}
+
