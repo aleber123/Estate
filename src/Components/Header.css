@@ -30,18 +30,20 @@
   z-index: 1001; /* Set a higher z-index value for the menu */
   backdrop-filter: blur(10px); /* Increase blur effect */
   -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+
 }
 
 .nav-menu.active {
   right: 0;
   transition: 350ms;
+  border-radius: 20px 0 0 0px; /* Adds rounded corners on the right side */
 }
 
 .nav-text {
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 8px 0px 8px 16px;
+  padding: 15px 60px 0px 0px;
   list-style: none;
   height: 60px;
 }
@@ -49,12 +51,13 @@
 .nav-text a {
   text-decoration: none;
   color: #f5f5f5;
-  font-size: 18px;
-  width: 95%;
+  font-size: 25px;
+  width: 100%; /* Ensure it spans the full width of its container */
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  padding-left: 15px; /* Adjusted for clarity */
+  padding-right: 30px; /* Increase if you want more space on the right */
   border-radius: 4px;
 }
 
@@ -68,7 +71,7 @@
 }
 
 .nav-text a svg {
-  margin-right: 15px; /* Adjust the spacing between the icon and the text */
+  margin-right: 0px; /* Adjust the spacing between the icon and the text */
 }
 
 .nav-menu-items {
@@ -110,6 +113,36 @@ span {
 }
 
 .social-icons svg {
-  font-size: 24px; /* Adjust the icon size as needed */
+  font-size: 48px; /* Adjust the icon size as needed */
   margin: 0 10px; /* Add some spacing between icons */
+}
+.social-icons-bottom {
+  display: flex;
+  flex-direction: row; /* Keeps horizontal layout */
+  justify-content: center; /* Center items horizontally */
+  width: 100%; /* Ensures it spans the full width */
+  padding: 0px; /* Adds padding */
+  position: absolute;
+  left: 0; /* Ensures it starts from the very left */
+  right: 0; /* Ensures it extends to the very right */
+  bottom: 0; /* Aligns to the bottom */
+  font-size: 48px; /* Adjust icon size as needed, 48px might be too large */
+}
+
+.social-icons-bottom a, .social-icons-bottom a svg {
+  color: #ffffff; /* Sets icon color to white */
+  margin: 0 2px; /* Spacing between icons */
+}
+
+
+.menu-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px; /* Diameter of the circle */
+  height: 55px; /* Diameter of the circle */
+  border-radius: 50%; /* Creates a circle */
+  background-color: rgba(20, 20, 20, 0.25); /* White background with opacity for visibility */
+  backdrop-filter: blur(10px); /* Increase blur effect */
+  margin-right: 20px;
 }

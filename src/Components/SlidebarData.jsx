@@ -36,30 +36,28 @@ export const SidebarData = [
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: 'nav-text'
   },
+]
+export const SidebarDataBottom = [
   // Adding social media links
   {
-    title: 'FACEBOOK',
     path: 'https://facebook.com',
     icon: <FaIcons.FaFacebook />,
     cName: 'nav-text',
     external: true // Indicates this is an external link
   },
   {
-    title: 'INSTAGRAM',
     path: 'https://instagram.com',
     icon: <FaIcons.FaInstagram />,
     cName: 'nav-text',
     external: true
   },
   {
-    title: 'EMAIL',
     path: 'mailto:youremail@example.com',
     icon: <FaIcons.FaEnvelope />,
     cName: 'nav-text',
     external: true
   },
   {
-    title: 'TELEPHONE',
     path: 'tel:+1234567890',
     icon: <FaIcons.FaPhone />,
     cName: 'nav-text',
