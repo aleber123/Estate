@@ -10,7 +10,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 const Slideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const images = [logo, logo1, logo2];
-  const texts = ['SELL WITH US', 'BUY WITH US', 'YOUR TRUSTED PARTNER'];
+  const texts = ['SELL WITH US - We ensure your property stands out and sells for its true value', 'BUY WITH US - Find Your Dream Home with us.', 'YOUR TRUSTED PARTNER - From the first consultation to the final handshake.'];
 
   let touchStartX = 0;
   let touchEndX = 0;
@@ -70,7 +70,7 @@ const Slideshow = () => {
           ></span>
         ))}
       </div>
-      <div className={`${fontStyles.h2} overlay-text`}>{texts[currentSlide]}</div>
+      <div className={`${fontStyles.h4} overlay-text`}>{texts[currentSlide]}</div>
     </div>
   );
 };
