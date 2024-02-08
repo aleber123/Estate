@@ -12,7 +12,7 @@ const InstagramFeed = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const url="https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,children{media_type,media_url}&access_token="
+        const url="https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,permalink,children{media_type,media_url}&access_token="
         const token=process.env.REACT_APP_INSTAGRAM_AUTH_TOKEN;
        const fullurl=url.concat(token);
         const response = await fetch(fullurl);
@@ -51,7 +51,7 @@ const InstagramFeed = () => {
               <>
                 <div className="play-icon"><FaPlay /></div>
                 <video>
-                  <source src={post.thumbnail_url || post.media_url} alt={post.caption || 'Instagram post'} />
+                  <source src={post.media_url} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </>
