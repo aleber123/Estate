@@ -51,7 +51,7 @@ const InstagramFeed = () => {
               <>
                 <div className="play-icon"><FaPlay /></div>
                 <video>
-                  <source src={post.media_url} type="video/mp4" />
+                  <source src={post.thumbnail_url || post.media_url} alt={post.caption || 'Instagram post'} />
                   Your browser does not support the video tag.
                 </video>
               </>
