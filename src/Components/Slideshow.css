@@ -18,6 +18,35 @@
     margin-left: 100px; /* Larger left margin */
     margin-right: 100px; /* Larger right margin */
   }
+  .slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px; /* Adjust the size as needed */
+    color: #fff; /* Adjust arrow color as needed */
+    cursor: pointer;
+    z-index: 4; /* Ensure arrows are above the slideshow images */
+    width: 30px; /* Diameter of the circle */
+    height: 30px; /* Diameter of the circle */
+    border-radius: 50%; /* Creates a circle */
+    background-color: rgba(20, 20, 20, 0.25); /* White background with opacity for visibility */
+    backdrop-filter: blur(10px); /* Increase blur effect */
+  }
+  
+  .left-arrow {
+    left: 20px; /* Adjust distance from the left edge */
+  }
+  
+  .right-arrow {
+    right: 20px; /* Adjust distance from the right edge */
+  }
+  
+  /* Consider adding hover effects for better user interaction */
+  .slide-arrow:hover {
+    color: #ccc; /* Example hover color */
+  }
+  
+  
 }
 
 /* Setup for slideshow images */
@@ -79,31 +108,4 @@
   z-index: 3; /* Ensure indicators are above the images */
 }
 
-.slide-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 5px; /* Adjust the size as needed */
-  color: #fff; /* Adjust arrow color as needed */
-  cursor: pointer;
-  z-index: 4; /* Ensure arrows are above the slideshow images */
-  width: 55px; /* Diameter of the circle */
-  height: 55px; /* Diameter of the circle */
-  border-radius: 50%; /* Creates a circle */
-  background-color: rgba(20, 20, 20, 0.25); /* White background with opacity for visibility */
-  backdrop-filter: blur(10px); /* Increase blur effect */
-}
-
-.left-arrow {
-  left: 20px; /* Adjust distance from the left edge */
-}
-
-.right-arrow {
-  right: 20px; /* Adjust distance from the right edge */
-}
-
-/* Consider adding hover effects for better user interaction */
-.slide-arrow:hover {
-  color: #ccc; /* Example hover color */
-}
 
